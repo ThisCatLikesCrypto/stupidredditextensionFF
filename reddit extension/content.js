@@ -3,14 +3,14 @@ function replaceText(find, replace) {
   let node;
   
   while (node = walker.nextNode()) {
-    node.nodeValue = node.nodeValue.replace(new RegExp(find, 'gi'), replace);
+    node.nodeValue = node.nodeValue.replace(find, replace);
   }
 }
 
 function replaceWords() {
-  replaceText('\\bshare\\b', 'shreddit');
-  replaceText('\\bdelete\\b', 'shreddit');
-  replaceText('\\bkarma\\b', 'creddit');
+  replaceText(/share/gi, 'spreddit');
+  replaceText(/delete/gi, 'shreddit');
+  replaceText(/karma/gi, 'creddit');
 }
 
 // Observe changes in the DOM to handle dynamic content

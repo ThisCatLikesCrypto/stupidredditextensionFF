@@ -1,17 +1,15 @@
 {
-  "manifest_version": 3,
-  "name": "Reddit Text Changer",
+  "manifest_version": 2,
+  "name": "Reddit Word Replacer",
   "version": "1.0",
-  "description": "Change 'share' to 'shreddit', 'delete' to 'shreddit', and 'karma' to 'creddit' on Reddit.",
+  "description": "Replace words on Reddit",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "webNavigation"
   ],
   "content_scripts": [
     {
-      "matches": [
-        "*://www.reddit.com/*",
-        "*://new.reddit.com/*"
-      ],
+      "matches": ["*://*.reddit.com/*", "*://new.reddit.com/*"],
       "js": ["content.js"]
     }
   ],
